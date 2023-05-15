@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <title>Contacts</title>
+</head>
+
+<body>
+  <h2>Start Creating Your Guest List for <%=event.name %></h2>
+    <form action="/addGuest/<%=event.id%>" method="POST">
+      <input type="text" placeholder="name" name="name">
+      <input type="email" placeholder="email" name="email">
+      <input type="tel" placeholder="number" name="number">
+      <button type="submit">Add Guest</button>
+    </form>
+
+  <h3>Potential Guest List:</h3>
+  <table>
+    <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Number</th>
+          <th>Invite Status</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0; i<guests.length; i++) {%>
+        <tr>
+          <td id="<%=guests[i]._id%>">
+            <%=guests[i].name %>
+          </td>
+          <td id="<%=guests[i]._id%>">
+            <%=guests[i].email %>
+          </td>
+          <td id="<%=guests[i]._id%>">
+            <%=guests[i].phoneNumber %>
+          </td>
+          <td class="inviteStatus" id="<%=guests[i]._id%>">
+            <%=guests[i].invited %>
+          </td>
+          <form action="/post/invite/<%= event._id%>?_method=PUT" method="POST">
+            <input type="hidden" value="<%=i%>" name="guest">
+          <td><button type="submit" class="invitebtn">Move</span></td>
+          </form>
+          <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+  <section>
+    <button class="clear">Clear All Contacts</button>
+  </section>
+
+
+  <h3>Final Guest List:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% invitedGuests.forEach((guest) => { %>
+          <tr>
+            <td>
+              <%=guest.name %>
+            </td>
+            <td>
+              <%=guest.email %>
+            </td>
+            <td>
+              <%=guest.number %>
+            </td>
+            <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+          </tr>
+       <% }) %>
+      </tbody>
+    </table>
+
+    <form action="/post/sendText/<%= event._id%>?_method=PUT" method="POST">
+      <button class="sendTextBtn">Send Invitations Now!</button>
+    </form>
+</body>
+
+</html>

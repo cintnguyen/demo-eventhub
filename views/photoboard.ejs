@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="photoboardstyle.css">
+    <title>PhotoBoard</title>
+</head>
+<body>
+    <form action="/photoboard" method="POST" enctype="multipart/form-data">
+        <input type="file" placeholder="upload photo" name="photoUpload">
+        <!-- <label for="file">Select files</label> -->
+        <button type="submit">Upload Image</button>
+    </form>
+
+    <% if(photos){%>
+    <% for(let i=0; i<photos.length; i++){ %>
+        <img class="photoContainer" src="<%=photos[i].url %>"> 
+    <% } %>
+    <%}%>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/mapsstyle.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <input id="from" placeholder="your location" />
+      <input id="to" placeholder="your destination" value="<%= address %>"/>
+      <button class="get"><h3>get directions</h3></button>
+      <div id="googleMap"></div>
+      <div id="output"></div>
+      <ul id="steps"></ul>
+    </div>
+  </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjF4bqBu5j4eX7WU_EUnvlFRTkvs8iLac&libraries=places"></script>
+  <script src="../js/maps.js"></script>
+</html>

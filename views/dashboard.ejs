@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>Demo Day App</title>
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400&family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="page-header text-center">
+        <h3><span class="fa fa-user"></span> Welcome <%= user.userName %></h3>
+        <h1>Events Dashboard</h1>
+        <a href="/logout" class="btn btn-default btn-sm "><button class="logoutbtn">Logout</button></a>
+    </div>
+   
+    <div class="row">
+      
+        <section class="event">
+          <h2>Create Your Event</h2>
+          <form action="/createEvent" method="POST">
+            <input name="name" type="text" placeholder="event name">
+            <input name="address" type="text" placeholder="the address">
+            <input name="date" type="date" placeholder="the date">
+      <button type="submit">Create Event</button>
+      </form>
+
+        </section>
+
+<%for(let i = 0; i < events.length; i++){%>
+  <div><a href="/events/<%=events[i]._id%>"><%=events[i].date %> <%=events[i].name %></a></div>
+<%}%>
+  
+<script src="./js/main.js"></script>
+
+</body>
+</html>
