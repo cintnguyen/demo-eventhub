@@ -76,6 +76,7 @@ module.exports = {
         eventName: event.name,
         date: event.date,
         host: event.userName,
+        //photoboardURL: `${}`
         // add prop to send a link to the page once this is hosted
       })
       res.redirect(`/contacts/${event.id}`);
@@ -99,21 +100,38 @@ module.exports = {
       console.log(err);
     }
   },
-  createPost: async (req, res) => {
+  addPhoto: async (req, res) => {
     try {
+      const event = await Event.findById(req.params.id);
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
-
-      await Post.create({
-        title: req.body.title,
-        image: result.secure_url,
+      const photo = {
+        fromName: req.body.fromName,
+        photoURL: result.secure_url,
         cloudinaryId: result.public_id,
         caption: req.body.caption,
         likes: 0,
-        user: req.user.id,
-      });
-      console.log("Post has been added!");
-      res.redirect("/dashboard");
+        user: req.user ? req.user.id : null ,
+      }
+      event.photos.push(photo)
+      await event.save()
+      console.log("Photo has been added!");
+      res.redirect(`/photoboard/${event.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  deletePhoto: async (req, res) => {
+    try {
+      const event = await Event.findById(req.params.id);
+      // Upload image to cloudinary
+      console.log(`from the event ${req.params.id} splice out the photo from the photos array with the index ${req.params.photoIndex}` )
+      console.log(event.photos)
+      await cloudinary.uploader.destroy(event.photos[0].cloudinaryId)
+      event.photos.splice(req.params.photoIndex,1)
+      await event.save()
+      console.log("Photo has been added!");
+      res.redirect(`/photoboard/${event.id}`);
     } catch (err) {
       console.log(err);
     }
@@ -129,6 +147,7 @@ module.exports = {
         guests: [],
         tasks: [],
         name: req.body.name,
+        images: [],
       });
       console.log("Event has been added!");
       res.redirect("/dashboard");
@@ -157,6 +176,20 @@ module.exports = {
       const invitedGuest = event.guests[guestIndex]
       console.log({invitedGuest})
       invitedGuest.invited = true
+      event.markModified('guests'); // method for mongoose to recognize that we made changes to the guest array 
+      await event.save()
+      res.redirect(`/contacts/${event.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  deleteGuest: async (req, res) => {
+    try {
+      const event = await Event.findById(req.params.id);
+      const guestIndex = Number(req.body.guest)
+      const invitedGuest = event.guests[guestIndex]
+      console.log({invitedGuest})
+      event.guests.splice(guestIndex, 1);
       event.markModified('guests'); // method for mongoose to recognize that we made changes to the guest array 
       await event.save()
       res.redirect(`/contacts/${event.id}`);

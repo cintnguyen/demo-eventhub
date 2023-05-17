@@ -51,7 +51,11 @@
             <input type="hidden" value="<%=i%>" name="guest">
           <td><button type="submit" class="invitebtn">Move</span></td>
           </form>
-          <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+          <form action="/post/invite/<%= event._id%>?_method=DELETE" method="POST">
+            <input type="hidden" value="<%=i%>" name="guest">
+          <td><button type="submit" class="invitebtn">Delete</span></td>
+          </form>
+          
         </tr>
       <% } %>
     </tbody>
@@ -81,7 +85,7 @@
               <%=guest.email %>
             </td>
             <td>
-              <%=guest.number %>
+              <%=guest.phoneNumber %>
             </td>
             <td><i class="fa fa-trash" aria-hidden="true"></i></td>
           </tr>

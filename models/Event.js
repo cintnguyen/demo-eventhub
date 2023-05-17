@@ -45,6 +45,9 @@ const EventSchema = new mongoose.Schema({
   },
   tasks: {
     type: Array,
+  },
+  photos: {
+    type: Array,
   }
 });
 
