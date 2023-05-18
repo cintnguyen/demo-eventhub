@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 const TaskSchema = new mongoose.Schema({
-  tasks: {
+  taskName: {
     type: String,
   },
-  user: {
+  eventID: {
     type: String,
     required: true,
   },

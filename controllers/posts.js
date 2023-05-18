@@ -46,10 +46,46 @@ module.exports = {
       console.log(err);
     }
   },
+  addPhoto: async (req, res) => {
+    try {
+      const event = await Event.findById(req.params.id);
+      // Upload image to cloudinary
+      const result = await cloudinary.uploader.upload(req.file.path);
+      const photo = {
+        fromName: req.body.fromName,
+        photoURL: result.secure_url,
+        cloudinaryId: result.public_id,
+        caption: req.body.caption,
+        likes: 0,
+        user: req.user ? req.user.id : null ,
+      }
+      event.photos.push(photo)
+      await event.save()
+      console.log("Photo has been added!");
+      res.redirect(`/photoboard/${event.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  deletePhoto: async (req, res) => {
+    try {
+      const event = await Event.findById(req.params.id);
+      // Upload image to cloudinary
+      console.log(`from the event ${req.params.id} splice out the photo from the photos array with the index ${req.params.photoIndex}` )
+      console.log(event.photos)
+      await cloudinary.uploader.destroy(event.photos[0].cloudinaryId)
+      event.photos.splice(req.params.photoIndex,1)
+      await event.save()
+      console.log("Photo has been added!");
+      res.redirect(`/photoboard/${event.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getMaps: async (req, res) => {
     try {
       const event = await Event.findById(req.params.id);
-      res.render("maps.ejs", { address: event.address, user: req.user});
+      res.render("maps.ejs", { eventId: event._id, address: event.address, user: req.user});
     } catch (err) {
       console.log(err);
     }
@@ -100,42 +136,7 @@ module.exports = {
       console.log(err);
     }
   },
-  addPhoto: async (req, res) => {
-    try {
-      const event = await Event.findById(req.params.id);
-      // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
-      const photo = {
-        fromName: req.body.fromName,
-        photoURL: result.secure_url,
-        cloudinaryId: result.public_id,
-        caption: req.body.caption,
-        likes: 0,
-        user: req.user ? req.user.id : null ,
-      }
-      event.photos.push(photo)
-      await event.save()
-      console.log("Photo has been added!");
-      res.redirect(`/photoboard/${event.id}`);
-    } catch (err) {
-      console.log(err);
-    }
-  },
-  deletePhoto: async (req, res) => {
-    try {
-      const event = await Event.findById(req.params.id);
-      // Upload image to cloudinary
-      console.log(`from the event ${req.params.id} splice out the photo from the photos array with the index ${req.params.photoIndex}` )
-      console.log(event.photos)
-      await cloudinary.uploader.destroy(event.photos[0].cloudinaryId)
-      event.photos.splice(req.params.photoIndex,1)
-      await event.save()
-      console.log("Photo has been added!");
-      res.redirect(`/photoboard/${event.id}`);
-    } catch (err) {
-      console.log(err);
-    }
-  },
+  
   createEvent: async (req, res) => {
     try {
       await Event.create({
@@ -205,17 +206,12 @@ module.exports = {
       console.log(err);
     }
   },
-  deletePost: async (req, res) => {
+  getToDoList: async (req, res) => {
     try {
-      // Find post by id
-      let post = await Post.findById({ _id: req.params.id });
-      // Delete image from cloudinary
-      await cloudinary.uploader.destroy(post.cloudinaryId);
-      // Delete post from db
-      await Post.remove({ _id: req.params.id });
-      res.redirect("/dashboard");
+      const events = await Event.find({ user: req.user._id });
+      res.render("todos.ejs", {});
     } catch (err) {
-      res.redirect("/dashboard");
+      console.log(err);
     }
   }
 };

@@ -1,24 +1,31 @@
-<%- include('partials/header') -%>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+</head>
+<body>
     <h1>Todos</h1>
-    <ul>
-    <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
+    <a href="/events/<%=eventID%>">reutrn to dashbaord</a>
 
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
-
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
+    <form action="/todos/<%=eventID%>" method="POST">
+        <input type="text" name="eventName" placeholder="insert event type" >
+        <button type="submit">Submit</button>
     </form>
 
-    <a href="/logout">Logout</a>
+    <ul>
+    <% for (let i = 0; i < toDosItems.length; i++) { %>
+        <li><%= toDosItems[i].taskName %></li>
+    <% } %>
+    </ul>
+    
 
-    <script src="js/main.js"></script>
+    <a href="/todos/<%=eventID%>/clearAll">Clear All</a>
+    
+</body>
+</html>
 
-<%- include('partials/footer') -%>
+    
+

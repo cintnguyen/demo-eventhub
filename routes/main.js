@@ -3,6 +3,7 @@ const router = express.Router();
 const authController = require("../controllers/auth");
 const homeController = require("../controllers/home");
 const postsController = require("../controllers/posts");
+const todosController = require("../controllers/todos");
 const upload = require("../middleware/multer");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
@@ -26,7 +27,11 @@ router.post("/addGuest/:id", postsController.addGuest);
 
 router.get("/photoboard/:id", postsController.getPhotoboard);
 router.put("/addPhoto/:id", upload.single("file"), postsController.addPhoto);
-
 router.delete("/deletePhoto/:id/:photoIndex", postsController.deletePhoto);
+
+// router.all("/todos/:id", ensureAuth, todosController.getToDoList);
+router.get("/todos/:id", ensureAuth, todosController.getToDoList);
+router.post("/todos/:id", ensureAuth, todosController.postToDoList);
+router.get("/todos/:id/clearAll", ensureAuth, todosController.clearToDoList);
 
 module.exports = router;

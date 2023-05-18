@@ -12,6 +12,8 @@
 <body>
 
   <h2>Add a photo!</h2>
+  <a href="/events/<%=event._id%>">back</a>
+
   <section>
     <form action="/addPhoto/<%= event._id%>?_method=PUT" enctype="multipart/form-data" method="POST">
       <div class="mb-3">

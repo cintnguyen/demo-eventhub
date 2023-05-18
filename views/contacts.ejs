@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <a href="/events/<%=event._id%>">back</a>
   <h2>Start Creating Your Guest List for <%=event.name %></h2>
     <form action="/addGuest/<%=event.id%>" method="POST">
       <input type="text" placeholder="name" name="name">
