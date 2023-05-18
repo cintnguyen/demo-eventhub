@@ -1,20 +1,5 @@
 const mongoose = require("mongoose");
 
-// type Guest = {
-//   name: {
-//     type: String,
-//   },
-//   email: {
-//     type: String,
-//   },
-//   number: {
-//     type: String,
-//   },
-//   inviteStatus: {
-//     type: String,
-//   },
-// }
-
 const EventSchema = new mongoose.Schema({
   name: {
     type: String,

@@ -24,20 +24,6 @@ module.exports = {
       console.log(err);
     }
   },
-  getToDoList: async (req, res) => {
-    try {
-      const event = await Event.findById(req.params.id);
-    // const list = await generateList({
-// pass in the things you think open ai will need
-    // })
-      // event.tasks = list
-      // event.markModified('tasks');
-      // await event.save()
-      res.render("todos.ejs", { list });
-    } catch (err) {
-      console.log(err);
-    }
-  },
   getPhotoboard: async (req, res) => {
     try {
       const event = await Event.findById(req.params.id);
@@ -85,7 +71,7 @@ module.exports = {
   getMaps: async (req, res) => {
     try {
       const event = await Event.findById(req.params.id);
-      res.render("maps.ejs", { eventId: event._id, address: event.address, user: req.user});
+      res.render("maps.ejs", { eventID: event._id, address: event.address, user: req.user});
     } catch (err) {
       console.log(err);
     }
@@ -206,12 +192,4 @@ module.exports = {
       console.log(err);
     }
   },
-  getToDoList: async (req, res) => {
-    try {
-      const events = await Event.find({ user: req.user._id });
-      res.render("todos.ejs", {});
-    } catch (err) {
-      console.log(err);
-    }
-  }
 };

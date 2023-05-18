@@ -74,4 +74,16 @@ module.exports = {
             console.log(err);
         }
     },
+    deleteTask: async (req, res) => {
+        try {
+          const event = await Event.findById(req.params.id);
+          const taskIndex = Number(req.body.task)
+          event.tasks.splice(taskIndex, 1);
+          event.markModified('tasks'); // method for mongoose to recognize that we made changes to the guest array 
+          await event.save()
+          res.redirect(`/todos/${event.id}`);
+        } catch (err) {
+          console.log(err);
+        }
+      },
 };

@@ -15,16 +15,20 @@ router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 
+//Dashboard
 router.get("/dashboard", ensureAuth, postsController.getDashboard);
 router.post("/createEvent", postsController.createEvent);
 router.get("/events/:id", ensureAuth, postsController.getEvent);
-router.get("/contacts/:id", ensureAuth, postsController.getContacts);
-router.get("/maps/:id", postsController.getMaps);
 
-router.get("/todoList/:id", postsController.getToDoList);
+//Invitations 
+router.get("/contacts/:id", ensureAuth, postsController.getContacts);
 router.post("/addGuest/:id", postsController.addGuest);
 
+//Google Maps
+router.get("/maps/:id", postsController.getMaps);
 
+
+//PhotoBoard
 router.get("/photoboard/:id", postsController.getPhotoboard);
 router.put("/addPhoto/:id", upload.single("file"), postsController.addPhoto);
 router.delete("/deletePhoto/:id/:photoIndex", postsController.deletePhoto);
@@ -33,5 +37,6 @@ router.delete("/deletePhoto/:id/:photoIndex", postsController.deletePhoto);
 router.get("/todos/:id", ensureAuth, todosController.getToDoList);
 router.post("/todos/:id", ensureAuth, todosController.postToDoList);
 router.get("/todos/:id/clearAll", ensureAuth, todosController.clearToDoList);
+router.delete("/todos/:id", todosController.deleteTask);
 
 module.exports = router;
