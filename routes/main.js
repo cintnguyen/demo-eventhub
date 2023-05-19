@@ -19,6 +19,7 @@ router.post("/signup", authController.postSignup);
 router.get("/dashboard", ensureAuth, postsController.getDashboard);
 router.post("/createEvent", postsController.createEvent);
 router.get("/events/:id", ensureAuth, postsController.getEvent);
+router.delete("/dashboard/:id", postsController.deleteEvent);
 
 //Invitations 
 router.get("/contacts/:id", ensureAuth, postsController.getContacts);

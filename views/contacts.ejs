@@ -50,11 +50,11 @@
           </td>
           <form action="/post/invite/<%= event._id%>?_method=PUT" method="POST">
             <input type="hidden" value="<%=i%>" name="guest">
-          <td><button type="submit" class="invitebtn">Move</span></td>
+          <td><button type="submit" class="invitebtn">Move</button></td>
           </form>
           <form action="/post/invite/<%= event._id%>?_method=DELETE" method="POST">
             <input type="hidden" value="<%=i%>" name="guest">
-          <td><button type="submit" class="invitebtn">Delete</span></td>
+          <td><button type="submit" class="deletebtn">Delete</span></td>
           </form>
           
         </tr>

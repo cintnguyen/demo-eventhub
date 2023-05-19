@@ -192,4 +192,13 @@ module.exports = {
       console.log(err);
     }
   },
+  deleteEvent: async (req, res) => {
+    try {
+      const event = await Event.findById(req.params.id);
+      event.deleteOne({_id: event.id})
+      res.redirect(`/dashboard`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };

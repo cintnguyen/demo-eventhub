@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400&family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/dashboardstyle.css">
+  <link rel="stylesheet" href="/css/dashboardstyle.css">
 </head>
 
 <body>
@@ -41,7 +41,10 @@
             <div class="eventName"><%=events[i].name %><div>
             <div class="eventDate"><%=events[i].date %><div>
             <a href="/events/<%=events[i]._id%>"><button class="eventEditBtn">Edit</button></a>
-            <button>Remove</button>
+            <form action="/dashboard/<%= events[i]._id%>?_method=DELETE" method="POST">
+              <input type="hidden">
+              <button type="submit" class="deletebtn">Delete</button>
+            </form>
           </section>
       </section>
     <%}%>
