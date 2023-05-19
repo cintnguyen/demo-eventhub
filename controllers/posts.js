@@ -196,6 +196,10 @@ module.exports = {
     try {
       const event = await Event.findById(req.params.id);
       event.deleteOne({_id: event.id})
+      // const guestIndex = Number(req.body.guest)
+      // const invitedGuest = event.guests[guestIndex]
+      //event.markModified('guests'); // method for mongoose to recognize that we made changes to the guest array 
+      // await event.save()
       res.redirect(`/dashboard`);
     } catch (err) {
       console.log(err);

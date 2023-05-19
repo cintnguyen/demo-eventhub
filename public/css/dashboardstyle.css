@@ -83,11 +83,13 @@ h2 {
 
 .eventImage{
   height:50%;
+  background: url(/imgs/titleCardImg.png) no-repeat;
+  background-size:cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-.eventImage img{
-  display:contain;
-}
+
 
 .titleCardText{
   display:flex;
