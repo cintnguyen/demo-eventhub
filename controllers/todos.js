@@ -4,22 +4,6 @@ const Event = require("../models/Event")
 const Task = require("../models/Task")
 
 module.exports = {
-    // getToDoList: async (req, res) => {
-    //     try {
-    //         const event = await Event.findById(req.params.id);
-            
-    //         let toDosItems = [];
-    //         if (req.body && req.body.eventName){
-    //             const eventName = req.body.eventName.trim();
-    //             if (eventName.length > 0){
-    //                 toDosItems = await chatgpt.fetch(eventName);
-    //             }
-    //         }
-    //         res.render("todos.ejs", { eventID: event._id , toDosItems});
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // },
     getToDoList: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
