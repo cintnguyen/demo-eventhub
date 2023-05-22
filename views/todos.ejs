@@ -10,11 +10,18 @@
     <h1>To Do List</h1>
     <a href="/events/<%=eventID%>">reutrn to dashbaord</a>
 
-    <form action="/todos/<%=eventID%>" method="POST">
+    <% console.log(toDosItems.length?true:false) %>
+    <form action="/todos/<%=eventID%>" method="POST" id="chatGPTSearchToDos">
+        <input type="hidden" id="toDoListExist" value="<%= toDosItems.length?true:false%>">
         <input type="text" name="eventName" placeholder="insert event type" >
         <button type="submit">Submit</button>
     </form>
 
+    <!-- <form action="/todos/<%=eventID%>" method="POST">
+        <input type="text" name="" placeholder="add task" >
+        <button type="submit">Submit</button>
+    </form> -->
+    
     <ul>
     <% for (let i = 0; i < toDosItems.length; i++) { %>
         <li><%= toDosItems[i].taskName %></li>
@@ -27,6 +34,7 @@
     
 
     <a href="/todos/<%=eventID%>/clearAll">Clear All</a>
+    <script src="/js/todos.js"></script>
     
 </body>
 </html>

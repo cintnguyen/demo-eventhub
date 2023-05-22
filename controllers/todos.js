@@ -44,6 +44,35 @@ module.exports = {
             console.log(err);
         }
     },
+    postUserToDoList: async (req, res) => {
+        try {
+            const event = await Event.findById(req.params.id);
+            let toDosItems = [];
+            if (req.body && req.body.eventName){
+                const eventName = req.body.eventName.trim();
+                if (eventName.length > 0) {
+                    toDosItems = await chatGPT.fetch(eventName);
+                    if (toDosItems.length > 0) {
+                        event.tasks = toDosItems.map(item => {
+                            return new Task({
+                                taskName: item,
+                                eventID: event._id,
+                            });
+                        }) 
+                        event.markModified("tasks")
+                        await event.save()
+                    }
+                }
+            }
+            res.render("todos.ejs", { 
+                eventID: event._id, 
+                toDosItems: event.tasks,
+            });
+            
+        } catch (err) {
+            console.log(err);
+        }
+    },
     clearToDoList: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);

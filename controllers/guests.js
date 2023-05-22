@@ -6,7 +6,7 @@ module.exports = {
     try {
       const event = await Event.findById(req.params.id);
       const invitedGuests = event.guests.filter((guest) => guest.invited)
-      res.render("contacts.ejs", { guests: event.guests ? event.guests : [], event, user: req.user, invitedGuests });
+      res.render("guests.ejs", { guests: event.guests ? event.guests : [], event, user: req.user, invitedGuests });
     } catch (err) {
       console.log(err);
     }
