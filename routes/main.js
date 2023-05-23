@@ -43,4 +43,7 @@ router.post("/todos/:id", ensureAuth, todosController.postToDoList);
 router.get("/todos/:id/clearAll", ensureAuth, todosController.clearToDoList);
 router.delete("/todos/:id", todosController.deleteTask);
 
+
+router.post("/todostwo/:id", ensureAuth, todosController.userPostToDoList);
+
 module.exports = router;
