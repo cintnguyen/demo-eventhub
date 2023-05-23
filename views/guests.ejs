@@ -94,8 +94,12 @@
     </table>
 
     <form action="/post/sendText/<%= event._id%>?_method=PUT" method="POST">
+      <p> This is the text message that your guest will get: <%= host %> is inviting you to their <%=eventName%>! It's on <%=new Date(date).toLocaleDateString()%>. Find more information at photoboardURL` </p>
+      <textarea name="userText" placeholder="Construct your message"></textarea>
       <button class="sendTextBtn">Send Invitations Now!</button>
     </form>
+
+
 </body>
 
 </html>

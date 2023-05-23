@@ -6,7 +6,13 @@ module.exports = {
     try {
       const event = await Event.findById(req.params.id);
       const invitedGuests = event.guests.filter((guest) => guest.invited)
-      res.render("guests.ejs", { guests: event.guests ? event.guests : [], event, user: req.user, invitedGuests });
+      res.render("guests.ejs", { 
+        guests: event.guests ? event.guests : [], event, 
+        user: req.user, 
+        invitedGuests, 
+        eventName: event.name,
+        date: event.date,
+        host: event.userName, });
     } catch (err) {
       console.log(err);
     }
@@ -20,6 +26,7 @@ module.exports = {
         eventName: event.name,
         date: event.date,
         host: event.userName,
+        userText: req.body.userText,
         //photoboardURL: `${}`
         // add prop to send a link to the page once this is hosted
       })

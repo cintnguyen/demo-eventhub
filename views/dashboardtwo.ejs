@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Bridely</title>
+    <title>Home | Bridely</title>
     <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-icon-72x72.png">
@@ -39,11 +39,17 @@
 
 <body>
     <!-- HEADER-SECTION -->
-    <div class="home-header-section sub-header-section">
+    <div class="home-header-section">
+        <!-- <figure class="banner-right-img left_icon img">
+            <img src="./assets/images/header-right-img.png" alt="" class="star">
+        </figure> -->
         <div class="header-top header-top1">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 d-md-block d-sm-none">
+                        <!-- <div class="header-left d-table-cell align-middle">
+                          <div class="phone-icon d-inline-block"><i class="fa-solid fa-phone-volume"></i></div><p class="free-consultation-text">For a free consultation:<a href="tel:+123456789" class="text-decoration-none">0800 123 45 67 890</a></p>
+                        </div> -->
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="header-right float-md-right float-none">
@@ -75,7 +81,7 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav">
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link text-decoration-none navbar-text-color home-margin-top"
                                         href="index.html">Home<span class="sr-only">(current)</span></a>
                                 </li>
@@ -111,7 +117,7 @@
                             </ul>
                             <div class="btn-talk ml-auto">
                                 <ul class="m-0 p-0">
-                                    <li class="list-unstyled d-lg-inline-block active"><a class="nav-link contact"
+                                    <li class="list-unstyled d-lg-inline-block"><a class="nav-link contact"
                                             href="contact.html">Order Services</a></li>
                                     <li class="icon-search"><a href="" class="text-decoration-none play-button"><i
                                                 class="fa-solid fa-magnifying-glass"></i></a></li>
@@ -122,25 +128,139 @@
                 </div>
             </div>
         </header>
+
+           <!-- Form-Section -->
+
+    <section class="form-section overflow-hidden">
+        <figure class="hearts-img">
+            <img src="./assets/images/categories-img1.png" alt="" class="star">
+        </figure>
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <figure class="form-section-img">
+                        <img src="./assets/images/form-section-img1.png" alt="" class="img-fluid">
+                    </figure>
+                </div> -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="about-section-form position-relative" data-aos="fade-up">
+                        <figure class="cate-icon-img">
+                            <img src="./assets/images/categories-logo-img.png" alt="">
+                        </figure>
+                        <h2 class="contact-us-title">Make Reservations</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed doeiusm tempor incididunt </p>
+                        <form id="form_id" method="post" action="/createEvent">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group contact-form-margin">
+                                        <i class="fa-solid fa-user icons-form"></i> <input type="text" class="form-control input-text" id="validationCustom01" placeholder="Event Name" required="" name="name">
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group contact-form-margin">
+                                        <i class="fa fa-envelope icons-form"></i> <input type="text"
+                                            class="form-control input-text" id="validationCustom02" placeholder="Address"
+                                            required="" name="address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group contact-form-margin">
+                                        <!-- <i class="fa fa-user-plus icons-form"></i> -->
+                                        <i class="fa-solid fa-people-group icons-form"></i>
+                                        <input type="date"
+                                            class="form-control input-text" id="validationCustom03" placeholder="date"
+                                            required="" name="date">
+                                    </div>
+                                </div>
+                                <!-- <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group contact-form-margin"><i class="fa fa-calendar-days icons-form"></i>
+                                        <select class="form-control">
+                                            <option value="0"> Select Date:</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+
+                            </div>
+                            <!-- <div class="form-group special">
+                                <select class="form-control select-icon select-event">
+                                    <option value="0"> Select Event:</option>
+                                    <option>America</option>
+                                    <option>Australia</option>
+                                    <option>America</option>
+                                    <option>Saudia</option>
+                                    <option>Belgium</option>
+                                </select>
+                            </div> -->
+                            <div class="banner-btn discover-btn-banner">
+                                <button type="submit" class="btn btn-primary">Create Event</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>View your events below:</h2>
+        <%for(let i=0; i < events.length; i++){%>
+            <section class="titleCards card">
+                <section class="eventImage"></section>
+                <section class="titleCardText">
+                  <div class="eventName"><%=events[i].name %><div>
+                  <div class="eventDate"><%=events[i].date %><div>
+                  <a href="/events/<%=events[i]._id%>"><button class="eventEditBtn">Edit</button></a>
+                  <form action="/dashboard/<%= events[i]._id%>?_method=DELETE" method="POST">
+                    <input type="hidden">
+                    <button type="submit" class="deletebtn">Delete</button>
+                  </form>
+                </section>
+            </section>
+        <%}%>
+
+    </section>
+
         <!-- BANNER-SECTION -->
-        <div class="home-banner-section overflow-hidden position-relative sub-baner">
+        <div class="home-banner-section overflow-hidden position-relative">
             <figure class="banner-img1 mb-0">
                 <img src="./assets/images/banner-img1.png" alt="" class="star">
             </figure>
             <figure class="banner-img2 mb-0">
                 <img src="./assets/images/banner-img2.png" alt="" class="star">
             </figure>
-            <div class="banner-container-box contact-banner">
+            <div class="banner-container-box">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 order-lg-2 order-1">
-                            <div class="home-banner-text position-relative sub-banner-section" data-aos="fade-up" id="myContentDIV">
-                                <h1>Contact<span class="h1-text"> Us!</span></h1>
+                        <div
+                            class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-md-0 mb-4 text-md-left text-center order-lg-1 order-2">
+
+                            <div class="banner-img-content position-relative">
+                                <figure class="banner-img mb-0">
+                                    <img class="img-fluid banner-img-width"
+                                        src="assets/images/bridely-banner-left-img.png" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 order-lg-2 order-1">
+                            <div class="home-banner-text position-relative" data-aos="fade-up" id="myContentDIV">
+                                <figure class="ring-icon-img mb-0">
+                                    <img src="./assets/images/ring-icon-banner.png" alt="">
+                                </figure>
+                                <h1>Perfect Weddings <span class="h1-text">Made Easy!</span></h1>
                                 <p class="banner-paragraph">
-                                    Lorem ipsum dolor sit amet consectetur adipiscing elit sed doeiusm tempor incididunt 
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit sed doeiusm tempor incididunt
                                 </p>
                                 <div class="banner-btn discover-btn-banner">
-                                    <div class="btn-inner">Home  -<span class="about-margin"> Contact</span></div>
+                                    <a href="about.html" class="text-decoration-none"><i
+                                            class="fa fa-clipboard-list"></i>Make Reservations</a>
                                 </div>
                             </div>
                         </div>
@@ -148,148 +268,72 @@
                 </div>
             </div>
         </div>
-<!--Get-in-touch  -->
-<div class="get-in-touch">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <div class="send_message_form_box_content">
-                   <figure class="contact-form-img">
-                       <img src="./assets/images/contact-form-img.png" alt="" class="img-fluid">
-                   </figure>
-                    <form id="contactpage" method="POST" action="/signup" class="contactpage-form">
+    <!-- Categories-SECTION -->
+    <section class="categories-section overflow-hidden position-relative">
+        <figure class="hearts-img">
+            <img src="./assets/images/categories-img1.png" alt="" class="star">
+        </figure>
+        <figure class="design-img">
+            <img src="./assets/images/categories-img6.png" alt="" class="star">
+        </figure>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 order-lg-1 order-1">
+                    <div class="about-us-content" data-aos="fade-up">
+                        <div class="cate-icon-outer">
+                            <figure class="cate-icon-img mb-0">
+                                <img src="./assets/images/categories-logo-img.png" alt="">
+                            </figure>
+                        </div>
+                        <h2>Includes Various Product Categories
+                        </h2>
+                        <p class="aboutus-p">Lorem ipsum dolor sit amet
+                            consectetur adipiscing elit sed doeiusm tempor incididunt.</p>
+                        <div class="banner-btn discover-btn-banner">
+                            <a href="about.html" class="text-decoration-none">learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-5 col-md-12 col-sm-12 order-lg-2 order-2">
+                    <div class="about-content-img">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="form-group mb-0">    
-                                <input type="text" class="form_style" placeholder="User Name" name="userName"> 
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="card card1">
+                                    <figure class="mb-0 category-section-f2"><img
+                                            src="./assets/images/categories-img2.png" alt=""></figure>
+                                    <h6>Chairs</h6>
+                                </div>
+                                <div class="card card2">
+                                    <figure class="mb-0 category-section-f3"><img
+                                            src="./assets/images/categories-img3.png" alt=""></figure>
+                                    <h6>Wedding Walls</h6>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="form-group mb-0">
-                                <input type="email" class="form_style" placeholder="Email" name="email">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="form-group mb-0">    
-                                <input type="password" class="form_style" placeholder="Password" name="password"> 
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="form-group mb-0">    
-                                <input type="password" class="form_style" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword"> 
-                                </div>
-                            </div>
-                            <!-- <div class="col-lg-6 col-md-6">
-                                <div class="form-group mb-0">    
-                                <input type="text" class="form_style choose-services" placeholder="Choose Services:"><i class="fa-solid fa-chevron-right"></i>
-                                </div>
-                            </div> -->
                         </div>
-                        <!-- <div class="row">
-                            <div class="col-lg-12">
-                                <div class=" form-group mb-0">    
-                                <textarea class="form_style" placeholder="Message" rows="3" name="comments"></textarea>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="card card3">
+                                    <figure class="mb-0 category-section-f4"><img
+                                            src="./assets/images/categories-img4.png" alt=""></figure>
+                                    <h6>Catering</h6>
+                                </div>
+                                <div class="card card4">
+                                    <figure class="mb-0 category-section-f5"><img
+                                            src="./assets/images/categories-img5.png" alt=""></figure>
+                                    <h6>Metal Circles & Flowers</h6>
                                 </div>
                             </div>
-                        </div> -->
-                        <div class="form_button_wrapper text-center">
-                            <button type="submit" class="appointment-btn">Sign Up</button>
                         </div>
-                    </form>
-                    <div class="send_message_form_box_content">
-                        <p>Already have an account? <a href="/login">Login</a></p>
-                        <p>Or go <a href="/">home</a>.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-sm-1 d-xl-block d-none"></div>
-            <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12">
-                <div class="about-content-img aos-init aos-animate" data-aos="fade-up">
-                    <figure class="mb-0 about-section-f1"><img src="./assets/images/get-in-img.png" alt="" class="star">
-                    </figure>
-                    <h2>Interested in  discussing? Get In touch with us.</h2>
-                     <p>Lorem ipsum dolor sit amet consect etur adipisci ngelitsed do eiu smo d tempor incididunt ut labo re etdo lore magna aliqua quisfipolo</p>
-                     <h6>Follow us:</h6>
-                     <ul class="list-unstyled footer-social-icons">
-                        <li class="list-item">
-                            <a href="#"><i class="fa-brands fa-square-facebook marginLeft "></i></a>
-                            <a href="#"><i class="fa-brands fa-square-twitter marginLeft twiter"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin marginLeft"></i></a>
-                            <a href="#"><i class="fa-brands fa-square-pinterest marginLeft"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<!-- contact-details-section -->
-<section class="contact-details-section-outer">
-    <figure class="design-img mb-0">
-        <img src="./assets/images/categories-img6.png" alt="" class="">
-    </figure>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="contact-images">
-                    <figure class="design-img-hearts mb-0">
-                        <img src="./assets/images/contact-details-hearts.png" alt="" class="star">
-                    </figure>
-                </div>
-                <h5 class="autorix-text aos-init aos-animate"><span class="ityped">Contact with Us</span><span class="ityped-cursor">|</span></h5>
-                    <h2 class="aos-init aos-animate">Contact Details</h2>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="contact-details-section">
-    <div class="container">
-        <div class="row" data-aos="fade-up">
-            <div class="col-lg-12">
-                <div class="carts_outer float-left w-100">
-                    <div class="carts">
-                        <ul class="list-unstyled">
-                            <li class="first">
-                                <figure class="mb-0 d-inline-block"><img src="./assets/images/contact-detail-img1.png" alt=""></figure>
-                                <div class="carts_wrapper">
-                                    <span class="rating counter">Phone:</span>
-                                   <a href="tel:+(123)456789111" class="text-decoration-none profession phone-number"> +(123) 456 789 111  </a>      
-                                    <a href="tel:+(321)111456789"  class="text-decoration-none profession phone-number"> +(321) 111 456 789</a>
-                                </div>
-                            </li>
-                            <li class="second">
-                                <figure class="mb-0 d-inline-block"><img src="./assets/images/contact-detail-img2.png" alt=""></figure>
-                                <div class="carts_wrapper">
-                                    <span class="rating counter">Address:</span>
-                                    <span class="profession">121 King Street Melbourne, 3000, Australia</span>
-                                </div>
-                            </li>
-                            <li class="third">
-                                <figure class="mb-0 d-inline-block"><img src="./assets/images/contact-detail-img3.png" alt=""></figure>
-                                <div class="carts_wrapper">
-                                    <span class="rating counter">Email:</span>
-                                    <a href="mailto:support@bridely.com" class="text-decoration-none profession">support@bridely.com</a>
-                                        <a href="mailto:support@bridely.com" class="text-decoration-none profession">  events@bridely.com </a>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- map-section -->
-<div class="map-section overflow-hidden">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.332792000837!2d144.96230210000004!3d-37.80567329999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2s!4v1658996311977!5m2!1sen!2s" width="1114" height="366" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </div>
-</div>
+    </section>
+    
+   
+ 
+
 <div class="footer-section">      
     <div class="footer-inner">
         <figure class="mb-0 footer-hearts">
@@ -438,6 +482,7 @@
     <script src="./assets/js/type.js"></script>
     <script src="assets/js/custom-script.js"></script>
     <script src="./assets/js/video-popup.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
