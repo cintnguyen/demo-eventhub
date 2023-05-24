@@ -10,6 +10,7 @@ module.exports = {
             res.render("todos.ejs", {
                 eventID: event._id,
                 toDosItems: event.tasks,
+                eventName: event.name,
             });
         } catch (err) {
             console.log(err);
@@ -35,10 +36,7 @@ module.exports = {
                     }
                 }
             }
-            res.render("todos.ejs", {
-                eventID: event._id,
-                toDosItems: event.tasks,
-            });
+            res.redirect(`/todos/${event.id}#cntodolist`);
 
         } catch (err) {
             console.log(err);
@@ -53,10 +51,7 @@ module.exports = {
             }));
             event.markModified("tasks")
             await event.save()
-            res.render("todos.ejs", {
-                eventID: event._id,
-                toDosItems: event.tasks,
-            });
+            res.redirect(`/todos/${event.id}#cntodolist`);
 
         } catch (err) {
             console.log(err);
@@ -68,10 +63,7 @@ module.exports = {
             event.tasks = []
             event.markModified("tasks")
             await event.save()
-            res.render("todos.ejs", {
-                eventID: event._id,
-                toDosItems: [],
-            });
+            res.redirect(`/todos/${event.id}#cntodolist`);
         } catch (err) {
             console.log(err);
         }
@@ -83,7 +75,7 @@ module.exports = {
             event.tasks.splice(taskIndex, 1);
             event.markModified('tasks'); // method for mongoose to recognize that we made changes to the guest array 
             await event.save()
-            res.redirect(`/todos/${event.id}`);
+            res.redirect(`/todos/${event.id}#cntodolist`);
         } catch (err) {
             console.log(err);
         }

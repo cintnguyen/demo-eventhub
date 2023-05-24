@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <a href="/events/<%=eventID%>">reutrn to dashbaord</a>
+
+    <% console.log(toDosItems.length?true:false) %>
+    <form action="/todos/<%=eventID%>" method="POST" id="chatGPTSearchToDos">
+        <input type="hidden" id="toDoListExist" value="<%= toDosItems.length?true:false%>">
+        <input type="text" name="eventName" placeholder="insert event type" >
+        <button type="submit">Submit</button>
+    </form>
+
+    <form action="/todostwo/<%=eventID%>" method="POST">
+        <input type="text" name="userAddTask" placeholder="add task" >
+        <button type="submit">Submit</button>
+    </form>
+    
+    <ul>
+    <% for (let i = 0; i < toDosItems.length; i++) { %>
+        <li><%= toDosItems[i].taskName %></li>
+        <form action="/todos/<%= eventID%>?_method=DELETE" method="POST">
+            <input type="hidden" value="<%=i%>" name="task">
+            <span><button type="submit" class="deletebtn">Delete</button></span>
+        </form>
+    <% } %>
+    </ul>
+    
+
+    <a href="/todos/<%=eventID%>/clearAll">Clear All</a>
+    <script src="/js/todos.js"></script>
+    
+</body>
+</html>
+
+    
+
