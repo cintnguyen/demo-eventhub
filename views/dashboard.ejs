@@ -39,7 +39,7 @@
 
 <body>
    <!-- HEADER-SECTION -->
-<div class="home-header-section sub-header-section">
+<div class="home-header-section sub-header-section" id="backToTop">
     <header class="header">
         <div class="main-header">
             <div class="container">
@@ -173,7 +173,7 @@
     </div>
     <div class="get-in-touch gallery-page" >
         <div class="container">
-            <h2 id="cnevents">View your events below:</h2>
+            <h2 id="cnevents"><%=user.userName%>'s Events:</h2>
             <br>
 
             <div class="row" data-aos="fade-up">
@@ -193,12 +193,15 @@
                           <div><button class="fa fa-trash icons-form" type="submit" class="deletebtn"></button></div>
                         </form>
                     </div>
+                    <br>
+                    <br>
                 </div>
                 <%}%>
             </div>
-            <!-- <div class="banner-btn discover-btn-banner">
-                <a href="about.html" class="text-decoration-none">Make Reservations</a>
-            </div> -->
+            <br>
+            <div class="banner-btn discover-btn-banner">
+                <a href="#backToTop" class="text-decoration-none">Back To The Top</a>
+            </div>
         </div>
         <figure class="gallery-design-img">
             <img src="./assets/images/gallery-design-img.png" alt="">
