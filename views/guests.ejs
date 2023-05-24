@@ -77,34 +77,26 @@
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link text-decoration-none navbar-text-color home-margin-top"
-                                        href="index.html">Home<span class="sr-only">(current)</span></a>
+                                        href="/dashboard">Dashboard<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-decoration-none navbar-text-color"
-                                        href="about.html">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-decoration-none navbar-text-color"
-                                        href="services.html">Services</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-decoration-none navbar-text-color"
-                                        href="gallery.html">Gallery</a>
+                                        href="/events/<%=eventID%>">Event</a>
                                 </li>
                                 <!-- <li class="nav-item navbar-text-color"><a class="nav-link text-decoration-none contact-us-margin navbar-text-color" href="pricing.html">Pricing</a></li> -->
                                 <li class="nav-item dropdown redlight-dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
                                     <div class="dropdown-menu dropdown-content-redlight">
                                         <ul class="list-unstyled">
+                                            <li class="nav-item"><a class="dropdown-item nav-link"
+                                                href="/todos/<%=eventID%>">To Do List</a></li>
+                                            <li class="nav-item"> <a class="dropdown-item nav-link active"
+                                                href="/contacts/<%=eventID%>">Guest List</a></li>
                                             <li class="nav-item"> <a class="dropdown-item nav-link"
-                                                    href="pricing.html">Pricing</a></li>
+                                                href="/photoboard/<%=eventID%>">Photo Board</a></li>        
                                             <li class="nav-item"> <a class="dropdown-item nav-link"
-                                                    href="single_gallery.html">Gallery Single</a></li>
-                                            <li class="nav-item"> <a class="dropdown-item nav-link"
-                                                    href="organizer.html">Event Organizer</a></li>        
-                                            <li class="nav-item"> <a class="dropdown-item nav-link"
-                                                    href="comming-soon.html">Comming soon</a></li>
+                                                href="/maps/<%=eventID%>">Directions</a></li>
                                         </ul>
                                     </div>
                                 </li>

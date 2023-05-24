@@ -12,7 +12,9 @@ module.exports = {
         invitedGuests, 
         eventName: event.name,
         date: event.date,
-        host: event.userName, });
+        host: event.userName, 
+        eventID: event._id,
+      });
     } catch (err) {
       console.log(err);
     }
