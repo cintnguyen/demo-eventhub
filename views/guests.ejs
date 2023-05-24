@@ -1,105 +1,366 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <title>Contacts</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Bridely</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
 </head>
 
 <body>
-  <a href="/events/<%=event._id%>">back</a>
-  <h2>Start Creating Your Guest List for <%=event.name %></h2>
-    <form action="/addGuest/<%=event.id%>" method="POST">
-      <input type="text" placeholder="name" name="name">
-      <input type="email" placeholder="email" name="email">
-      <input type="tel" placeholder="number" name="number">
-      <button type="submit">Add Guest</button>
-    </form>
+    <!-- HEADER-SECTION -->
+    <div class="home-header-section sub-header-section">
+        <div class="header-top header-top1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 d-md-block d-sm-none">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="header-right float-md-right float-none">
+                            <ul class="list-unstyled">
+                                <li class="d-inline-block"><a class="d-inline-block email-span text-decoration-none"
+                                        href="mailto:info@sencare.com">Folllow us on:</a></li>
+                                <li class="d-inline-block user-li"><i class="fa-brands fa-facebook-f"></i></li>
+                                <li class="d-inline-block user-li"><i class="fa-brands fa-twitter"></i></li>
+                                <li class="d-inline-block user-li"><i class="fa-brands fa-pinterest-p"></i></li>
+                                <li class="d-inline-block user-li"><i class="fa-brands fa-instagram"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="header">
+            <div class="main-header">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light p-0">
+                        <a class="navbar-brand pt-0" href="index.html"><img src="../assets/images/bridely-logo.png"
+                                alt="" class="img-fluid diverge-logo"></a>
+                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link text-decoration-none navbar-text-color home-margin-top"
+                                        href="index.html">Home<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-decoration-none navbar-text-color"
+                                        href="about.html">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-decoration-none navbar-text-color"
+                                        href="services.html">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-decoration-none navbar-text-color"
+                                        href="gallery.html">Gallery</a>
+                                </li>
+                                <!-- <li class="nav-item navbar-text-color"><a class="nav-link text-decoration-none contact-us-margin navbar-text-color" href="pricing.html">Pricing</a></li> -->
+                                <li class="nav-item dropdown redlight-dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                    <div class="dropdown-menu dropdown-content-redlight">
+                                        <ul class="list-unstyled">
+                                            <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                    href="pricing.html">Pricing</a></li>
+                                            <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                    href="single_gallery.html">Gallery Single</a></li>
+                                            <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                    href="organizer.html">Event Organizer</a></li>        
+                                            <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                    href="comming-soon.html">Comming soon</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="btn-talk ml-auto">
+                                <ul class="m-0 p-0">
+                                    <li class="list-unstyled d-lg-inline-block active"><a class="nav-link contact"
+                                            href="/logout">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- BANNER-SECTION -->
+        <div class="home-banner-section overflow-hidden position-relative sub-baner">
+            <figure class="banner-img1 mb-0">
+                <img src="../assets/images/banner-img1.png" alt="" class="star">
+            </figure>
+            <figure class="banner-img2 mb-0">
+                <img src="../assets/images/banner-img2.png" alt="" class="star">
+            </figure>
+            <div class="banner-container-box contact-banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 order-lg-2 order-1">
+                            <div class="home-banner-text position-relative sub-banner-section" data-aos="fade-up" id="myContentDIV">
+                                <h1><span class="h1-text"><%=eventName%> </span>Guest List</h1>
+                                <p class="banner-paragraph">
+                                    Curate your guest list and send text reminders! 
+                                </p>
+                                <!-- <div class="banner-btn discover-btn-banner">
+                                    <div class="btn-inner">Home  -<span class="about-margin"> Contact</span></div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--Get-in-touch  -->
+<div class="get-in-touch">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="send_message_form_box_content">
+                   <!-- <figure class="contact-form-img">
+                       <img src="../assets/images/contact-form-img.png" alt="" class="img-fluid">
+                   </figure> -->
+                   <h2>Add to Potential Guest List:</h2>
+                   <br>
+                    <form id="contactpage" method="POST" action="/addGuest/<%=event.id%>">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-6">
+                                <div class="form-group mb-0">    
+                                <input type="text" class="form_style" placeholder="Name" name="name"> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-6">
+                                <div class="form-group mb-0">    
+                                <input type="email" class="form_style" placeholder="Email" name="email"> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-6">
+                                <div class="form-group mb-0">    
+                                <input type="tel" class="form_style" placeholder="Number" name="number"> 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-lg-12">
+                                <div class=" form-group mb-0">    
+                                <textarea class="form_style" placeholder="Message" rows="3" name="comments"></textarea>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="form_button_wrapper text-center">
+                            <button type="submit" class="appointment-btn">Add Guest</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 d-xl-block d-none"></div>
+            <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12" >
+                <div class="about-content-img aos-init aos-animate" data-aos="fade-up">
+                    <figure class="mb-0 about-section-f1"><img src="../assets/images/get-in-img.png" alt="" class="star">
+                    </figure>
+                    <h2>Potential Guest List</h2>
+                     <p>Once you've brainstormed your potential list, move them to the final guest list where you can customize your text reminders!</p>
+                     
+                     <!-- <h6>Follow us:</h6>
+                     <ul class="list-unstyled footer-social-icons">
+                        <li class="list-item">
+                            <a href="#"><i class="fa-brands fa-square-facebook marginLeft "></i></a>
+                            <a href="#"><i class="fa-brands fa-square-twitter marginLeft twiter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin marginLeft"></i></a>
+                            <a href="#"><i class="fa-brands fa-square-pinterest marginLeft"></i></a>
+                        </li>
+                    </ul> -->
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- contact-details-section -->
+<section class="contact-details-section-outer">
+    <figure class="design-img mb-0">
+        <img src="../assets/images/categories-img6.png" alt="" class="">
+    </figure>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-images">
+                    <figure class="design-img-hearts mb-0">
+                        <img src="../assets/images/contact-details-hearts.png" alt="" class="star">
+                    </figure>
+                </div>
+                <!-- <h5 class="autorix-text aos-init aos-animate"><span class="ityped">Contact with Us</span><span class="ityped-cursor">|</span></h5> -->
+                    <h2 id="cnpotential" class="aos-init aos-animate">Potential Guest List:</h2>
+            </div>
+        </div>
+        <table>
+            <div class="row">
+                <thead>
+                    <tr>
+                    <th class="col-lg-3 col-md-6">Name</th>
+                    <th class="col-lg-3 col-md-6">Email</th>
+                    <th class="col-lg-3 col-md-6">Number</th>
+                    <th class="col-lg-3 col-md-6">Invited</th>
+                    </tr>
+                </thead>
+            </div>
+            <div class="row">
+                <tbody>
+                <% for(var i=0; i<guests.length; i++) {%>
+                    <tr>
+                    <td class="col-lg-3 col-md-6" id="<%=guests[i]._id%>">
+                        <%=guests[i].name %>
+                    </td>
+                    <td class="col-lg-3 col-md-6" id="<%=guests[i]._id%>">
+                        <%=guests[i].email %>
+                    </td>
+                    <td class="col-lg-3 col-md-6" id="<%=guests[i]._id%>">
+                        <%=guests[i].phoneNumber %>
+                    </td>
+                    <td class="col-lg-3 col-md-6 inviteStatus" id="<%=guests[i]._id%>">
+                        <%=guests[i].invited %>
+                    </td>
+                    <form action="/post/invite/<%= event._id%>?_method=PUT" method="POST">
+                        <input type="hidden" value="<%=i%>" name="guest">
+                    <td><button type="submit" class="invitebtn">Invite</button></td>
+                    </form>
+                    <form action="/post/invite/<%= event._id%>?_method=DELETE" method="POST">
+                        <input type="hidden" value="<%=i%>" name="guest">
+                    <td><button type="submit" class="deletebtn">Delete</span></td>
+                    </form>
+                    </tr>
+                <% } %>
+                </tbody>
+            </div>
+          </table>
+          <br>
+          <br>
+          <!-- <div class="row">
+            <button class="col-lg-12 clear">Clear All Contacts</button>
+          </div> -->
+    </div>
+    
+</section>
 
-  <h3>Potential Guest List:</h3>
-  <table>
-    <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Number</th>
-          <th>Invite Status</th>
-        </tr>
-    </thead>
-    <tbody>
-      <% for(var i=0; i<guests.length; i++) {%>
-        <tr>
-          <td id="<%=guests[i]._id%>">
-            <%=guests[i].name %>
-          </td>
-          <td id="<%=guests[i]._id%>">
-            <%=guests[i].email %>
-          </td>
-          <td id="<%=guests[i]._id%>">
-            <%=guests[i].phoneNumber %>
-          </td>
-          <td class="inviteStatus" id="<%=guests[i]._id%>">
-            <%=guests[i].invited %>
-          </td>
-          <form action="/post/invite/<%= event._id%>?_method=PUT" method="POST">
-            <input type="hidden" value="<%=i%>" name="guest">
-          <td><button type="submit" class="invitebtn">Move</button></td>
-          </form>
-          <form action="/post/invite/<%= event._id%>?_method=DELETE" method="POST">
-            <input type="hidden" value="<%=i%>" name="guest">
-          <td><button type="submit" class="deletebtn">Delete</span></td>
-          </form>
-          
-        </tr>
-      <% } %>
-    </tbody>
-  </table>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="contact-images">
+                <figure class="design-img-hearts mb-0">
+                    <img src="../assets/images/contact-details-hearts.png" alt="" class="star">
+                </figure>
+            </div>
+            <!-- <h5 class="autorix-text aos-init aos-animate"><span class="ityped">Contact with Us</span><span class="ityped-cursor">|</span></h5> -->
+                <h2 id="cnfinal" class="aos-init aos-animate">Final Guest List:</h2>
+        </div>
+    </div>
+    <br>
 
-  <section>
-    <button class="clear">Clear All Contacts</button>
-  </section>
+    <div class="row">
+        <div class="col-lg-8">
+            <table class="col-lg-7">
+                <div class="row">
+                    <thead>
+                        <tr>
+                        <th class="col-lg-4 col-md-6">Name</th>
+                        <th class="col-lg-4 col-md-6">Email</th>
+                        <th class="col-lg-4 col-md-6">Number</th>
+                        </tr>
+                    </thead>
+                </div>
+                <div class="row">
+                    <tbody>
+                        <% invitedGuests.forEach((guest) => { %>
+                            <tr>
+                            <td class="col-lg-4 col-md-6">
+                                <%=guest.name %>
+                            </td>
+                            <td class="col-lg-4 col-md-6">
+                                <%=guest.email %>
+                            </td>
+                            <td class="col-lg-4 col-md-6">
+                                <%=guest.phoneNumber %>
+                            </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </div>
+            </table>
+        </div>
 
-
-  <h3>Final Guest List:</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Number</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% invitedGuests.forEach((guest) => { %>
-          <tr>
-            <td>
-              <%=guest.name %>
-            </td>
-            <td>
-              <%=guest.email %>
-            </td>
-            <td>
-              <%=guest.phoneNumber %>
-            </td>
-          </tr>
-       <% }) %>
-      </tbody>
-    </table>
-
-    <form action="/post/sendText/<%= event._id%>?_method=PUT" method="POST">
-      <p> This is the text message that your guest will get: <%= host %> is inviting you to their <%=eventName%>! It's on <%=new Date(date).toLocaleDateString()%>. Find more information at photoboardURL` </p>
-      <textarea name="userText" placeholder="Construct your message"></textarea>
-      <button class="sendTextBtn">Send Invitations Now!</button>
-    </form>
+        <div class="col-lg-4">
+            <h2>Your Text Invitation Will Read:</h2>
+            <br>
+            <form action="/post/sendText/<%= event._id%>?_method=PUT" method="POST">
+                <p>"<%= host %> is inviting you to their <%=eventName%>! It's on <%=new Date(date).toLocaleDateString()%>. Find more information at photoboardURL"</p>
+                <textarea class="col-lg-12" name="userText" placeholder="Customize your text with more information here!"></textarea>
+                <br>
+                <button class="sendTextBtn">Send Invitations Now!</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 
+
+
+<div class="footer-section">      
+   
+</div>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/owl.carousel.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/text-animations.js"></script>
+    <script src="../assets/js/carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="https://unpkg.com/ityped@0.0.10"></script>
+    <script src="../assets/js/type.js"></script>
+    <script src="../assets/js/custom-script.js"></script>
+    <script src="../assets/js/video-popup.js"></script>
 </body>
 
 </html>

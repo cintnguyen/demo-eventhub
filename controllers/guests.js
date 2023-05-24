@@ -46,7 +46,7 @@ module.exports = {
       const event = await Event.findById(req.params.id);
       event.guests.push(guest)
       await event.save()
-      res.redirect(`/contacts/${event.id}`);
+      res.redirect(`/contacts/${event.id}#cnpotential`);
     } catch (err) {
       console.log(err);
     }
@@ -60,7 +60,7 @@ module.exports = {
       invitedGuest.invited = true
       event.markModified('guests'); // method for mongoose to recognize that we made changes to the guest array 
       await event.save()
-      res.redirect(`/contacts/${event.id}`);
+      res.redirect(`/contacts/${event.id}#cnfinal`);
     } catch (err) {
       console.log(err);
     }
@@ -74,7 +74,7 @@ module.exports = {
       event.guests.splice(guestIndex, 1);
       event.markModified('guests'); // method for mongoose to recognize that we made changes to the guest array 
       await event.save()
-      res.redirect(`/contacts/${event.id}`);
+      res.redirect(`/contacts/${event.id}#cnpotential`);
     } catch (err) {
       console.log(err);
     }
