@@ -20,9 +20,9 @@ router.post("/signup", authController.postSignup);
 
 //Dashboard
 router.get("/dashboard", ensureAuth, eventsController.getDashboard);
-router.post("/createEvent", eventsController.createEvent);
+router.post("/createEvent", ensureAuth, upload.single("file"), eventsController.createEvent);
 router.get("/events/:id", ensureAuth, eventsController.getEvent);
-router.delete("/dashboard/:id", eventsController.deleteEvent);
+router.delete("/dashboard/:id", ensureAuth, eventsController.deleteEvent);
 
 //Guests 
 router.get("/contacts/:id", ensureAuth, guestsController.getContacts);

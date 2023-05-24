@@ -1,56 +1,225 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="zxx">
 
 <head>
-  <title>Demo Day App</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400&family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/dashboardstyle.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Bridely</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
 </head>
 
 <body>
-  <header class="header">
-    <h1>Events Dashboard</h1>
-    <a href="/logout" class="btn btn-default btn-sm "><button class="logoutbtn">Logout</button></a>
-  </header>
+   <!-- HEADER-SECTION -->
+<div class="home-header-section sub-header-section">
+    <header class="header">
+        <div class="main-header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                    <a class="navbar-brand pt-0" href="index.html"><img src="./assets/images/bridely-logo.png" alt="" class="img-fluid diverge-logo"></a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link text-decoration-none navbar-text-color home-margin-top"
+                                    href="/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-decoration-none navbar-text-color"
+                                    href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-decoration-none navbar-text-color"
+                                    href="services.html">Services</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link text-decoration-none navbar-text-color"
+                                    href="gallery.html">Gallery</a>
+                            </li> -->
+                            <!-- <li class="nav-item navbar-text-color"><a class="nav-link text-decoration-none contact-us-margin navbar-text-color" href="pricing.html">Pricing</a></li> -->
+                            <li class="nav-item dropdown redlight-dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
+                                <div class="dropdown-menu dropdown-content-redlight">
+                                  <%for(let i=0; i < events.length; i++){%>
+                                    <ul class="list-unstyled">
+                                        <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                href="/events/<%=events[i]._id%>"><%=events[i].name %></a></li>
+                                        <!-- <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                href="single_gallery.html">Gallery Single</a></li>
+                                        <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                href="organizer.html">Event Organizer</a></li>        
+                                        <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                href="comming-soon.html">Comming soon</a></li> -->
+                                    </ul>
+                                  <%}%>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btn-talk ml-auto">
+                            <ul class="m-0 p-0">
+                                <li class="list-unstyled d-lg-inline-block"><a class="nav-link contact"
+                                        href="/logout">Log Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- BANNER-SECTION -->
+    <div class="home-banner-section overflow-hidden position-relative sub-baner">
+        <figure class="banner-img1 mb-0">
+            <img src="./assets/images/banner-img1.png" alt="" class="star">
+        </figure>
+        <figure class="banner-img2 mb-0">
+            <img src="./assets/images/banner-img2.png" alt="" class="star">
+        </figure>
+        <div class="banner-container-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 order-lg-2 order-1">
+                        <div class="position-relative sub-banner-section" data-aos="fade-up" id="myContentDIV">
+                            <h1><span class="h1-text">Dashboard</span></h1>
+                            <p class="banner-paragraph">
+                              Welcome <%= user.userName %> - Start creating your event below!
+                            </p>
+                            <form id="form_id" method="post" action="/createEvent" enctype="multipart/form-data">
+                              <div class="row">
+                                  <div class="col-lg-6 col-md-6 col-sm-12">
+                                      <div class="form-group contact-form-margin">
+                                          <i class="fa-solid fa-user icons-form"></i> <input type="text" class="form-control input-text" id="validationCustom01" placeholder="Event Name" required="" name="name">
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-6 col-md-6 col-sm-12">
+                                      <div class="form-group contact-form-margin">
+                                          <i class="fa fa-calendar-days icons-form"></i> <input type="date"
+                                              class="form-control input-date" id="validationCustom02" placeholder="Event Date"
+                                              required="" name="date">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group contact-form-margin">
+                                      <i class="fa fa-file icons-form"></i>
+                                      <input type="file"
+                                          class="form-control input-text" id="imageUpload" placeholder="Image Upload"
+                                          required="" name="file">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group contact-form-margin">
+                                      <i class="fa fa-location icons-form"></i>
+                                      <input type="text"
+                                          class="form-control input-text" id="validationCustom03" placeholder="Event Address"
+                                          required="" name="address">
+                                    </div>
+                                </div>
+                            </div>
+                              <!-- <div class="form-group special"><i class="fa fa-file icons-form"></i>
+                                <input type="file"
+                                    class="form-control input-text" id="imageUpload" placeholder="Image Upload"
+                                    required="" name="file">
+                              </div>
+                              <div class="form-group special"><i class="fa fa-calendar-days icons-form"></i>
+                                <input type="text"
+                                    class="form-control input-text" id="validationCustom03" placeholder="Event Address"
+                                    required="" name="address">
+                              </div> -->
+                              <div class="banner-btn discover-btn-banner">
+                                  <button type="submit" class="btn btn-primary">Create Event</button>
+                              </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="get-in-touch gallery-page">
+        <div class="container">
+            <h2>View your events below:</h2>
+            <br>
 
-  
-  <section class="event">
-    <h3><span class="fa fa-user"></span> Welcome <%= user.userName %></h3>
-    <section class="createEvent">
-      <h2>Create Your Event:</h2>
-      <form action="/createEvent" method="POST">
-        <input name="name" type="text" placeholder="event name">
-        <input name="address" type="text" placeholder="address">
-        <input name="date" type="date" placeholder="the date">
-        <button type="submit">Create Event</button>
-      </form>
-    </section>
-  </section>
+            <div class="row" data-aos="fade-up">
+              <%for(let i=0; i < events.length; i++){%>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                    <div class="gallery_content">
+                       <figure class="contact-form-img">
+                           <img src="<%= events[i].eventImage.photoURL %>" alt="" class="img-fluid">
+                       </figure>
+                        <div class="banner-btn discover-btn-banner">
+                            <a href="/events/<%=events[i]._id%>" class="text-decoration-none">Edit</a>
+                        </div>
+                        <h4><%=events[i].name %></h4>
+                        <p><%=events[i].date %></p>
+                        <form action="/dashboard/<%= events[i]._id%>?_method=DELETE" method="POST">
+                          <input type="hidden">
+                          <div><button class="fa fa-trash icons-form" type="submit" class="deletebtn"></button></div>
+                        </form>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+            <!-- <div class="banner-btn discover-btn-banner">
+                <a href="about.html" class="text-decoration-none">Make Reservations</a>
+            </div> -->
+        </div>
+        <figure class="gallery-design-img">
+            <img src="./assets/images/gallery-design-img.png" alt="">
+        </figure>
+    </div>
+</div> 
 
-  <h2>View your events below:</h2>
-  <section class="lower">
-    
-    <%for(let i=0; i < events.length; i++){%>
-      <section class="titleCards">
-          <section class="eventImage"></section>
-          <section class="titleCardText">
-            <div class="eventName"><%=events[i].name %><div>
-            <div class="eventDate"><%=events[i].date %><div>
-            <a href="/events/<%=events[i]._id%>"><button class="eventEditBtn">Edit</button></a>
-            <form action="/dashboard/<%= events[i]._id%>?_method=DELETE" method="POST">
-              <input type="hidden">
-              <button type="submit" class="deletebtn">Delete</button>
-            </form>
-          </section>
-      </section>
-    <%}%>
-  </section>
-
-  
-    <script src="./js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/text-animations.js"></script>
+    <script src="assets/js/carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="https://unpkg.com/ityped@0.0.10"></script>
+    <script src="./assets/js/type.js"></script>
+    <script src="assets/js/custom-script.js"></script>
+    <script src="./assets/js/video-popup.js"></script>
 </body>
+
 </html>

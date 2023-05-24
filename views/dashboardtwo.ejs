@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Demo Day App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400&family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/dashboardstyle.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Events Dashboard</h1>
+    <a href="/logout" class="btn btn-default btn-sm "><button class="logoutbtn">Logout</button></a>
+  </header>
+
+  
+  <section class="event">
+    <h3><span class="fa fa-user"></span> Welcome <%= user.userName %></h3>
+    <section class="createEvent">
+      <h2>Create Your Event:</h2>
+      <form action="/createEvent" method="POST">
+        <input name="name" type="text" placeholder="event name">
+        <input name="address" type="text" placeholder="address">
+        <input name="date" type="date" placeholder="the date">
+        <button type="submit">Create Event</button>
+      </form>
+    </section>
+  </section>
+
+  <h2>View your events below:</h2>
+  <section class="lower">
+    
+    <%for(let i=0; i < events.length; i++){%>
+      <section class="titleCards">
+          <section class="eventImage"></section>
+          <section class="titleCardText">
+            <div class="eventName"><%=events[i].name %><div>
+            <div class="eventDate"><%=events[i].date %><div>
+            <a href="/events/<%=events[i]._id%>"><button class="eventEditBtn">Edit</button></a>
+            <form action="/dashboard/<%= events[i]._id%>?_method=DELETE" method="POST">
+              <input type="hidden">
+              <button type="submit" class="deletebtn">Delete</button>
+            </form>
+          </section>
+      </section>
+    <%}%>
+  </section>
+
+  
+    <script src="./js/main.js"></script>
+</body>
+</html>

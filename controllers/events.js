@@ -4,7 +4,7 @@ const Comment = require("../models/Comment")
 // const Contact = require("../models/Contact")
 const Event = require("../models/Event")
 // const Task = require("../models/Task")
-const { sendText } = require("../helpers/twilio.js")
+
 
 module.exports = {
   getDashboard: async (req, res) => {
@@ -30,7 +30,12 @@ module.exports = {
   // },
   createEvent: async (req, res) => {
     try {
-      await Event.create({
+      const result = await cloudinary.uploader.upload(req.file.path);
+      const image = {
+        photoURL: result.secure_url,
+        cloudinaryId: result.public_id,
+      }
+      const event = {
         address: req.body.address,
         date: req.body.date,
         user: req.user.id,
@@ -39,8 +44,10 @@ module.exports = {
         guests: [],
         tasks: [],
         name: req.body.name,
-        images: [],
-      });
+        eventImage: image,
+      }
+      console.log(event)
+      await Event.create(event);
       console.log("Event has been added!");
       res.redirect("/dashboard");
     } catch (err) {

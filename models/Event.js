@@ -33,7 +33,10 @@ const EventSchema = new mongoose.Schema({
   },
   photos: {
     type: Array,
-  }
+  },
+  eventImage: {
+    type: Object,
+  },
 });
 
 module.exports = mongoose.model("Event", EventSchema);
