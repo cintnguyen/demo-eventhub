@@ -1,23 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Bridely</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="/css/mapsstyle.css">
-    <title>Document</title>
-  </head>
-  <body>
-    <a href="/events/<%=eventID%>">back</a>
+</head>
+
+<body>
+    <!-- HEADER-SECTION -->
+    <div class="home-header-section sub-header-section">
+        <header class="header">
+            <div class="main-header">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light p-0">
+                        <a class="navbar-brand pt-0" href="index.html"><img src="../assets/images/bridely-logo.png"
+                                alt="" class="img-fluid diverge-logo"></a>
+                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <% if (user) { %>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-decoration-none navbar-text-color home-margin-top"
+                                            href="/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-decoration-none navbar-text-color"
+                                            href="/events/<%=eventID%>">Event</a>
+                                    </li>
+                                    <% } %>
+                                    <% if (!user) { %>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-decoration-none navbar-text-color"
+                                            href="/photoboard/<%=eventID%>">Photo Board</a>
+                                    </li> 
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-decoration-none navbar-text-color"
+                                            href="/maps/<%=eventID%>">Directions</a>
+                                    </li> 
+                                    <% } %>
+                                    <% if (user) { %>
+                                    <li class="nav-item dropdown redlight-dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
+                                        <div class="dropdown-menu dropdown-content-redlight">
+                                            <ul class="list-unstyled">
+                                                <li class="nav-item"><a class="dropdown-item nav-link"
+                                                    href="/todos/<%=eventID%>">To Do List</a></li>
+                                                <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                    href="/contacts/<%=eventID%>">Guest List</a></li>
+                                                <li class="nav-item active"> <a class="dropdown-item nav-link"
+                                                    href="/photoboard/<%=eventID%>">Photo Board</a></li>        
+                                                <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                    href="/maps/<%=eventID%>">Directions</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <% } %>
+                                    
+                                </ul>
+                                <% if (user) { %>
+                                <div class="btn-talk ml-auto">
+                                    <ul class="m-0 p-0">
+                                        <li class="list-unstyled d-lg-inline-block"><a class="nav-link contact"
+                                                href="/logout">Log Out</a></li>
+                                    </ul>
+                                </div>
+                                <% } %>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- BANNER-SECTION -->
+        <div class="home-banner-section overflow-hidden position-relative sub-baner">
+            <figure class="banner-img1 mb-0">
+                <img src="../assets/images/banner-img1.png" alt="" class="star">
+            </figure>
+            <figure class="banner-img2 mb-0">
+                <img src="../assets/images/banner-img2.png" alt="" class="star">
+            </figure>
+            <div class="banner-container-box contact-banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 order-lg-2 order-1">
+                            <div class="home-banner-text position-relative sub-banner-section" data-aos="fade-up" id="myContentDIV">
+                                <h1><span class="h1-text"><%= eventName %></span> Directions</h1>
+                                <p class="banner-paragraph">
+                                   Enter in where you'll be coming from and we'll take you the rest of the way!
+                                </p>
+                                <!-- <div class="banner-btn discover-btn-banner">
+                                    <div class="btn-inner">Home  -<span class="about-margin"> Contact</span></div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+<!--Get-in-touch  -->
+<div class="get-in-touch">
     <div class="container">
-      <input id="from" placeholder="your location" />
-      <input id="to" placeholder="your destination" value="<%= address %>"/>
-      <button class="get">Get Directions</button>
-      <div id="googleMap"></div>
-      <div id="output"></div>
-      <ul id="steps"></ul>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="send_message_form_box_content">
+                    <h2>Get Directions:</h2>
+                    <br>
+                    <form id="contactpage" method="POST" action="./contact-form.php" class="contactpage-form">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group mb-0">    
+                                <input type="text" class="form_style" placeholder="Enter your location" id="from"> 
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group mb-0">
+                                <input type="text" class="form_style" id="to" value="<%= address %>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_button_wrapper text-center">
+                            <button type="submit" class="appointment-btn get">Get Directions</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 d-xl-block d-none"></div>
+            <!-- <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12">
+                <div class="about-content-img aos-init aos-animate" data-aos="fade-up">
+                    <figure class="mb-0 about-section-f1"><img src="../assets/images/get-in-img.png" alt="" class="star">
+                    </figure>
+                    <h2>Miles</h2>
+                     <p id="output"></p>
+                     <h6>Follow us:</h6>
+                     <ul class="list-unstyled footer-social-icons">
+                        <li class="list-item">
+                            <a href="#"><i class="fa-brands fa-square-facebook marginLeft "></i></a>
+                            <a href="#"><i class="fa-brands fa-square-twitter marginLeft twiter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin marginLeft"></i></a>
+                            <a href="#"><i class="fa-brands fa-square-pinterest marginLeft"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
     </div>
-  </body>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjF4bqBu5j4eX7WU_EUnvlFRTkvs8iLac&libraries=places"></script>
-  <script src="../js/maps.js"></script>
+</div>
+</div>
+
+<div class="container">
+    <div id="googleMap"></div>
+    <div id="output"></div>
+    <ul id="steps"></ul>
+<div>
+
+<!-- <div class="map-section overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.332792000837!2d144.96230210000004!3d-37.80567329999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2s!4v1658996311977!5m2!1sen!2s" width="1114" height="366" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="footer-section">      
+</div>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/owl.carousel.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/text-animations.js"></script>
+    <script src="../assets/js/carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="https://unpkg.com/ityped@0.0.10"></script>
+    <script src="../assets/js/type.js"></script>
+    <script src="../assets/js/custom-script.js"></script>
+    <script src="../assets/js/video-popup.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjF4bqBu5j4eX7WU_EUnvlFRTkvs8iLac&libraries=places"></script>
+    <script src="../js/maps.js"></script>
+</body>
+
 </html>
