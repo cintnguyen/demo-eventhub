@@ -1,19 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/eventstyle.css">
-    <title>Event Page</title>
+    <title>Pricing | Bridely</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
 </head>
-<body>
-        <a href="/dashboard">reutrn to dashbaord</a>
-        <h3>Your <%= event.name %></h3>
 
-        <a href="/contacts/<%=event._id%>">Edit Your Contacts</a>
-        <a href="/todos/<%=event._id%>">AI-Generated To Do List</a>
-        <a href="/photoboard/<%=event._id%>">Check Out Your PhotoBoard</a>
-        <a href="/maps/<%=event._id%>">Directions to Venue!</a>
+<body>
+   <!-- HEADER-SECTION -->
+<div class="home-header-section sub-header-section">
+    <div class="header-top header-top1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 d-md-block d-sm-none"></div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="header-right float-md-right float-none">
+                        <ul class="list-unstyled">
+                            <li class="d-inline-block"><a class="d-inline-block email-span text-decoration-none" href="mailto:info@sencare.com">Folllow us on:</a></li>
+                            <li class="d-inline-block user-li"><i class="fa-brands fa-facebook-f"></i></li>
+                            <li class="d-inline-block user-li"><i class="fa-brands fa-twitter"></i></li>
+                            <li class="d-inline-block user-li"><i class="fa-brands fa-pinterest-p"></i></li>
+                            <li class="d-inline-block user-li"><i class="fa-brands fa-instagram"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="main-header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                    <a class="navbar-brand pt-0" href="index.html"><img src="../assets/images/bridely-logo.png"
+                            alt="" class="img-fluid diverge-logo"></a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-decoration-none navbar-text-color home-margin-top"
+                                    href="/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-decoration-none navbar-text-color"
+                                    href="/events/<%=event._id%>">Event</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link text-decoration-none navbar-text-color"
+                                    href="services.html">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-decoration-none navbar-text-color"
+                                    href="gallery.html">Gallery</a>
+                            </li> -->
+                            <!-- <li class="nav-item navbar-text-color"><a class="nav-link text-decoration-none contact-us-margin navbar-text-color" href="pricing.html">Pricing</a></li> -->
+                            <li class="nav-item dropdown redlight-dropdown active">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
+                                <div class="dropdown-menu dropdown-content-redlight">
+                                    <ul class="list-unstyled">
+                                        <li class="nav-item active"><a class="dropdown-item nav-link"
+                                                href="/todos/<%=event._id%>">To Do List</a></li>
+                                        <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                href="/contacts/<%=event._id%>">Guest List</a></li>
+                                        <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                href="/photoboard/<%=event._id%>">Photo Board</a></li>        
+                                        <li class="nav-item"> <a class="dropdown-item nav-link"
+                                                href="/maps/<%=event._id%>">Directions</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btn-talk ml-auto">
+                            <ul class="m-0 p-0">
+                                <li class="list-unstyled d-lg-inline-block"><a class="nav-link contact"
+                                        href="/logout">Log Out</a></li>
+                                <!-- <li class="icon-search"><a href="" class="text-decoration-none play-button"><i
+                                            class="fa-solid fa-magnifying-glass"></i></a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- BANNER-SECTION -->
+    <div class="home-banner-section overflow-hidden position-relative sub-baner">
+        <figure class="banner-img1 mb-0">
+            <img src="../assets/images/banner-img1.png" alt="" class="star">
+        </figure>
+        <figure class="banner-img2 mb-0">
+            <img src="../assets/images/banner-img2.png" alt="" class="star">
+        </figure>
+        <div class="banner-container-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 order-lg-2 order-1">
+                        <div class="position-relative sub-banner-section" data-aos="fade-up" id="myContentDIV">
+                            <h1><span class="h1-text"><%= event.name %></span></h1>
+                            <p class="banner-paragraph">
+                                Everything you need is only a few clicks away!
+                            </p>
+                            <!-- <div class="banner-btn discover-btn-banner">
+                                <div class="btn-inner">Home   - <span class="about-margin"> Pricing</span></div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pricing-section -->
+    <section class="pricing-plan-section overflow-hidden position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-md-5 mb-sm-5 mb-0">
+                    <div class="services-content aos-init aos-animate" data-aos="fade-up">
+                        <!-- <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="../assets/images/pricing-img1.png" alt="" class="img-fluid">
+                            </figure>
+                        </div> -->
+                        <h3 class="pricing-plan-color mb-0">To Do List</h3>
+                        <p class="pricing-free-text">Don't know where to start? We got you covered!</p>
+                        <!-- <p class="pricing-plane-prices">$250</p>
+                        <p class="pricing-text">Stylish makeup for bride.
+                            Top label arrangement
+                            Amazing meal & breakfast
+                            Manicure & Pedicure
+                            Full body Polish</p> -->
+                        <div class="order-now-btn">
+                            <a href="/todos/<%=event._id%>" class="text-decoration-none tenth-btn">Enter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="services-content aos-init aos-animate" data-aos="fade-up">
+                        <!-- <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="../assets/images/pricing-img2.png" alt="" class="img-fluid">
+                            </figure>
+                        </div> -->
+                        <h3 class="pricing-plan-color mb-0">Guest List</h3>
+                        <p class="pricing-free-text">Send invitations and reminders with ease!</p>
+                        <div class="order-now-btn">
+                            <a href="/contacts/<%=event._id%>" class="text-decoration-none">Enter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="services-content pro-card aos-init aos-animate services-content-last" data-aos="fade-up">
+                        <!-- <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="../assets/images/pricing-img3.png" alt="" class="img-fluid">
+                            </figure>
+                        </div> -->
+                        <h3 class="pricing-plan-color mb-0">Photo Board</h3>
+                        <p class="pricing-free-text">Share and relive your favorite memories!</p>
+                        <div class="order-now-btn">
+                            <a href="/photoboard/<%=event._id%>" class="text-decoration-none">Enter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="services-content pro-card aos-init aos-animate services-content-last" data-aos="fade-up">
+                        <!-- <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="../assets/images/pricing-img3.png" alt="" class="img-fluid">
+                            </figure>
+                        </div> -->
+                        <h3 class="pricing-plan-color mb-0">Driving Directions</h3>
+                        <p class="pricing-free-text">Tell us where you are and we'll get you there!</p>
+                        <div class="order-now-btn">
+                            <a href="/maps/<%=event._id%>" class="text-decoration-none">Enter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div> 
+
+
+
+    <!-- Story-Section -->
+    <section class="story-section overflow-hidden position-relative story-section-pricing">
+        <figure class="design-img mb-0">
+            <img src="../assets/images/carousel-design.png" alt="" class="">
+        </figure>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                    <figure class="mb-0 about-section-f1"><img src="../assets/images/about-bird-icon.png" alt="" class="star">
+                    </figure>
+                    <div class="story-card-content aos-init aos-animate" data-aos="fade-up">
+                        <figure class="story-card-img">
+                            <img src="../assets/images/story-card-img.png" alt="">
+                        </figure>
+                        <h3>Mason Cooley</h3>
+                        <p>An event is not over until everybody is tired of talking about it!</p>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <!-- <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+                    </ol> -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item">
+                                <figure class="mb-0 story-img1">
+                                    <img src="<%=event.eventImage.photoURL%>" alt="" class="img-fluid">
+                                </figure>
+                            </div>
+                            <div class="carousel-item active">
+                                <figure class="mb-0 story-img1">
+                                    <img src="<%=event.eventImage.photoURL%>" alt="" class="img-fluid">
+                                </figure>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="/assets/js/animations.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/owl.carousel.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/text-animations.js"></script>
+    <script src="/assets/js/carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="https://unpkg.com/ityped@0.0.10"></script>
+    <script src="/assets/js/type.js"></script>
+    <script src="/assets/js/custom-script.js"></script>
+    <script src="/assets/js/video-popup.js"></script>
 </body>
+
 </html>

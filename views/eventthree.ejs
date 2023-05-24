@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/eventstyle.css">
+    <title>Event Page</title>
+</head>
+<body>
+        <a href="/dashboard">reutrn to dashbaord</a>
+        <h3>Your <%= event.name %></h3>
+
+        <a href="/contacts/<%=event._id%>">Edit Your Contacts</a>
+        <a href="/todos/<%=event._id%>">AI-Generated To Do List</a>
+        <a href="/photoboard/<%=event._id%>">Check Out Your PhotoBoard</a>
+        <a href="/maps/<%=event._id%>">Directions to Venue!</a>
+</body>
+</html>
