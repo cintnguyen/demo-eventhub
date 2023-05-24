@@ -27,7 +27,7 @@ module.exports = {
       event.photos.push(photo)
       await event.save()
       console.log("Photo has been added!");
-      res.redirect(`/photoboard/${event.id}`);
+      res.redirect(`/photoboard/${event.id}#cnphoto`);
     } catch (err) {
       console.log(err);
     }
@@ -42,7 +42,7 @@ module.exports = {
       event.photos.splice(req.params.photoIndex,1)
       await event.save()
       console.log("Photo has been added!");
-      res.redirect(`/photoboard/${event.id}`);
+      res.redirect(`/photoboard/${event.id}#cnphoto`);
     } catch (err) {
       console.log(err);
     }
