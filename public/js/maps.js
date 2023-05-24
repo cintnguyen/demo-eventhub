@@ -1,4 +1,5 @@
-document.querySelector(".get").addEventListener("click", () => {
+document.querySelector(".get").addEventListener("click", (e) => {
+  e.preventDefault()
   console.log("getting map...");
   // set map options, we're gunna start the map in boston
 
