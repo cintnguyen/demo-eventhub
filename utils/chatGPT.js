@@ -17,7 +17,6 @@ async function fetch(eventName) {
     const items = response.content.split(/\d+\. /);
     items.shift(); // Remove empty first item
     const modifiedItems = items.map(item => item.replace(/\n/g, ''));
-    // console.log(modifiedItems)
     return modifiedItems
 }
 
