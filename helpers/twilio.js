@@ -7,6 +7,7 @@ const twilio = require('twilio')(accountSid, authToken);
 
 const sendText = ({list, eventName, date, host, userText, photoboardURL}) => {
   list.forEach((guest)=>{
+    console.log(`${process.env.BASE_URL}:${process.env.PORT}`)
     const eventDate = new Date(date)
     twilio.messages
     .create({
