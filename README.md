@@ -18,6 +18,18 @@ Check it out and let me know your thoughts! - https://theeventhub.onrender.com/
 - Currently the user has the ability to text their guest the link to the photoboard page of the app. This is a centralized area where guests can populate the board with images from the event with a caption. I would like to incorporate a security procation where user's that send out the link will also need to give a special code in order to access this specific page.
 
 ## On your own machine: 
+Note - This app requires MongoDB, Twilio, Cloudinary, OpenAI and Google Maps accounts, which can be configured through the following enviroment variables: 
+
+PORT\
+DB_STRING\
+CLOUD_NAME\
+API_KEY\
+API_SECRET\
+OPENAI_API_KEY\
+TWILIO_ACCOUNT_SID\
+TWILIO_AUTH_TOKEN\
+MY_PHONE_NUMBER\
+GOOGLE_KEY
 
 ### Install
 
@@ -28,3 +40,5 @@ Check it out and let me know your thoughts! - https://theeventhub.onrender.com/
 ### Run
 
 `npm start`
+
+Open [http://localhost:2121](http://localhost:2121) to view it in your browser
