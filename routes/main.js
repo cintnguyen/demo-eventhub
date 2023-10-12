@@ -18,6 +18,8 @@ router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 
+router.get("/about", homeController.getAbout);
+
 //Dashboard
 router.get("/dashboard", ensureAuth, eventsController.getDashboard);
 router.post("/createEvent", ensureAuth, upload.single("file"), eventsController.createEvent);
