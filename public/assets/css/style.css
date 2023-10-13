@@ -3984,3 +3984,15 @@ div#navbarSupportedContent {
   background: var(--e-global-color-peach) !important;
   color: var(--e-global-color-secondary) !important;
 }
+
+.index-image-one {
+  width:500px;
+}
+
+.index-image-two {
+  width:410px;
+}
+
+.index-image-three {
+  width:500px;  
+}
