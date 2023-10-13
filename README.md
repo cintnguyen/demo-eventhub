@@ -2,6 +2,9 @@
 A full-stack app for all your event needs! Seamlessly combines AI-generated to-do lists, text reminders, a centralized platform for shared images, and integration with Google Maps API for directions, revolutionizing event planning and organization. Create an account, log in and plan your next event!
 
 Check it out and let me know your thoughts! - https://theeventhub.onrender.com/
+To demo a fully populated site, feel free to use these login credentials:
+- Email: cindy@gmail.com
+- Password: testingone
 
 ## Tech Used:
 - Javascript, Node.js, Express, Multer, Passport, HTML / EJS, CSS, MongoDB
