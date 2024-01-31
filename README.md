@@ -11,7 +11,7 @@ To demo a fully populated site, feel free to use these login credentials:
 - APIs: OpenAI for ChatGPT curated to-do-list for any task, Twilio for SMS text reminders/ invitations, and Google Maps for directions
 - Model View Controller Framework (MVC) 
 
-![EventHub](public/imgs/eventhubreadme.png)
+![EventHub](public/imgs/readme.png)
 
 ### Things I'm proud of:
 - Integrating openAI API to parse through its resulting data and split it into bullet points that are then placed into my database (MongoDB) so that the user can interact with it as an actual to do list that they can check off, delete and add tasks too!
